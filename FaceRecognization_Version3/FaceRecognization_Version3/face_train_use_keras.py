@@ -3,8 +3,6 @@
 Created on Mon Feb 12 22:32:08 2018
 
 @author: yuwangwang
-
-@contact: QQ:632207491 E-mail:yuwangwang91@163.com
 """
 
 """============================================================================
@@ -376,7 +374,7 @@ class Model_train:
 
     # 一个函数用于保存模型，一个函数用于加载模型。
     # keras库利用了压缩效率更高的HDF5保存模型，所以我们用“.h5”作为文件后缀                                 
-    MODEL_PATH = '/home/yuwangwang/FaceRecognization_Version4/model/squeezenet.model.h5'
+    MODEL_PATH = '/home/yuwangwang/FaceRecognization_Version3/model/squeezenet.model.h5'
     def save_model(self, file_path = MODEL_PATH):
         self.model.save(file_path)
  
@@ -428,9 +426,9 @@ class Model_train:
 if __name__ == '__main__':
     
     # 读取数据
-    dataset = Dataset('/home/yuwangwang/FaceRecognization_Version4/face_data') 
+    dataset = Dataset('/home/yuwangwang/FaceRecognization_Version3/face_data') 
     # 读取路径    
-    path_name = '/home/yuwangwang/FaceRecognization_Version4/face_data'
+    path_name = '/home/yuwangwang/FaceRecognization_Version3/face_data'
     dataset.load()
     
     model = Model_train()
@@ -446,12 +444,12 @@ if __name__ == '__main__':
     model.train(dataset)
     
     print('Model Saved.')
-    model.save_model(file_path = '/home/yuwangwang/FaceRecognization_Version4/model/squeezenet.model.h5')
+    model.save_model(file_path = '/home/yuwangwang/FaceRecognization_Version3/model/squeezenet.model.h5')
     
    
     # 评估模型
     model = Model_train()
     print('\nTesting---------------------------------------------------------')
-    model.load_model(file_path = '/home/yuwangwang/FaceRecognization_Version4/model/squeezenet.model.h5')
+    model.load_model(file_path = '/home/yuwangwang/FaceRecognization_Version3/model/squeezenet.model.h5')
     model.evaluate(dataset)
    

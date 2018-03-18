@@ -3,7 +3,6 @@
 Created on Sat Feb 17 13:43:14 2018
 
 @author: yuwangwang
-
 """
 
 """============================================================================
@@ -29,7 +28,7 @@ class Camera_reader(object):
     # 在初始化camera的时候建立模型，并加载已经训练好的模型
     def __init__(self):
         self.model = Model_train()
-        self.model.load_model(file_path='/home/yuwangwang/FaceRecognization_Version4/model/squeezenet.model.h5')
+        self.model.load_model(file_path='/home/yuwangwang/FaceRecognization_Version3/model/squeezenet.model.h5')
 
 
     def build_camera(self, camera_id, path_name):
